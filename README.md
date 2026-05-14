@@ -2,45 +2,53 @@
 
 ## 📌 Descripción del proyecto
 
-Este proyecto es un sistema de clasificación de pacientes en triaje médico basado en una **Red Neuronal Artificial (RNA)** desarrollada en **Python con TensorFlow**.
+Este proyecto es un sistema de clasificación de pacientes en triaje médico basado en una **Red Neuronal Artificial (RNA)** desarrollada en Python con **TensorFlow**.
 
-El modelo predice el nivel de prioridad de atención médica (**ESI 1 a ESI 5**) a partir de datos clínicos como signos vitales, laboratorio y motivo de consulta.
+El modelo predice el nivel de prioridad de atención médica (**ESI 1 a ESI 5**) a partir de datos clínicos como signos vitales, laboratorios y motivo de consulta.
 
-La aplicación incluye una interfaz gráfica (GUI) creada con **Tkinter**, permitiendo ingresar datos de un paciente y obtener una predicción en tiempo real.
+La aplicación incluye una **interfaz gráfica (GUI)** creada con **Tkinter**, que permite ingresar datos de un paciente y obtener una predicción en tiempo real.
+
+---
 
 ## 🏥 ¿Qué es el sistema ESI?
 
-El sistema **Emergency Severity Index (ESI)** clasifica pacientes según la urgencia:
+El **Emergency Severity Index (ESI)** clasifica a los pacientes según la urgencia:
 
-| Nivel | Descripción |
-|-------|-------------|
+| Nivel | Descripción                    |
+|-------|-------------------------------|
 | ESI 1 | Crítico (riesgo vital inmediato) |
-| ESI 2 | Emergencia |
-| ESI 3 | Urgente |
-| ESI 4 | Menos urgente |
-| ESI 5 | No urgente |
+| ESI 2 | Emergencia                    |
+| ESI 3 | Urgente                       |
+| ESI 4 | Menos urgente                 |
+| ESI 5 | No urgente                    |
+
+---
 
 ## ⚙️ Tecnologías utilizadas
 
-| Tecnología | Uso |
-|------------|-----|
-| 🐍 Python 3.11 | Lenguaje principal |
-| 🤖 TensorFlow / Keras | Red neuronal |
-| 📊 Pandas | Manipulación de datos |
-| 🔢 NumPy | Operaciones numéricas |
-| 🧪 Scikit-learn | Preprocesamiento |
-| 🖥 Tkinter | Interfaz gráfica |
-| 📁 CSV | Dataset clínico |
+| Tecnología              | Uso                        |
+|-------------------------|----------------------------|
+| 🐍 Python 3.11           | Lenguaje principal         |
+| 🤖 TensorFlow / Keras    | Red neuronal artificial    |
+| 📊 Pandas               | Manipulación de datos      |
+| 🔢 NumPy                | Operaciones numéricas      |
+| 🧪 Scikit-learn         | Preprocesamiento           |
+| 🖥 Tkinter              | Interfaz gráfica           |
+| 📁 CSV                  | Conjunto de datos clínicos |
+
+---
 
 ## 🧠 ¿Cómo funciona?
 
-1. Se carga un dataset clínico de pacientes
-2. Se limpian y procesan los datos
-3. Se convierten variables categóricas en numéricas
-4. Se entrena una red neuronal multicapa
-5. El modelo aprende a clasificar el nivel ESI
-6. La interfaz permite ingresar datos de un paciente
-7. El sistema predice el nivel de urgencia en tiempo real
+1. Se carga un conjunto de datos clínicos de pacientes.
+2. Se limpian y procesan los datos.
+3. Se convierten variables categóricas en numéricas.
+4. Se entrena una red neuronal multicapa.
+5. El modelo aprende a clasificar el nivel ESI.
+6. La interfaz permite ingresar datos de un paciente.
+7. El sistema predice el nivel de urgencia en tiempo real.
+
+---
 
 ## 🚀 Cómo ejecutar el proyecto
 
@@ -50,65 +58,79 @@ El sistema **Emergency Severity Index (ESI)** clasifica pacientes según la urge
 git clone https://github.com/LitzyCastellanos/Sistema-de-Triaje-RNA.git
 ```
 
-## 2. Entrar a la carpeta
-bash
-cd Sistema-de-Triaje-RNA
-3. Instalar dependencias
-bash
-pip install pandas numpy scikit-learn tensorflow
-Nota: Este proyecto requiere Python 3.11 específicamente. Verifica tu versión con:
+### 2. Entrar a la carpeta
 
-bash
-python --version
-4. Ejecutar el sistema
-bash
+```bash
+cd Sistema-de-Triaje-RNA
+```
+
+### 3. Instalar dependencias
+
+```bash
+pip install pandas numpy scikit-learn tensorflow
+```
+
+> **Nota:** Este proyecto requiere **Python 3.11** específicamente. Verifica tu versión con:
+> ```bash
+> python --version
+> ```
+
+### 4. Ejecutar el sistema
+
+```bash
 python triaje_RNA.py
-🖥 Interfaz del sistema
+```
+
+---
+
+## 🖥 Interfaz del sistema
+
 Al ejecutar el programa se abre una ventana donde puedes ingresar:
 
-Edad
-
-Sexo
-
-Presión arterial
-
-Frecuencia cardíaca
-
-Temperatura
-
-Laboratorios
-
-Motivo de consulta
+- Edad
+- Sexo
+- Presión arterial
+- Frecuencia cardíaca
+- Temperatura
+- Laboratorios
+- Motivo de consulta
 
 Luego presionas:
 
-👉 "Predecir nivel ESI"
+> 👉 **"Predecir nivel ESI"**
 
-y el sistema mostrará:
+Y el sistema mostrará:
 
-Nivel ESI (1–5)
+- Nivel ESI (1–5)
+- Probabilidades por clase
+- Indicador visual por color
 
-Probabilidades por clase
+---
 
-Indicador visual por color
+## 📊 Características del modelo
 
-📊 Características del modelo
-Red neuronal con capas densas
+- Red neuronal con capas densas
+- Dropout para evitar sobreajuste
+- Normalización por lotes (Batch Normalization)
+- Early stopping (parada temprana)
 
-Dropout para evitar sobreajuste
+---
 
-Batch normalization
+## 📁 Estructura del proyecto
 
-Early stopping
-
-📁 Estructura del proyecto
-text
+```
 Sistema-de-Triaje-RNA/
 │
-├── triaje_RNA.py                 # Código principal + GUI
-├── fedmml_ed_triage_dataset.csv  # Dataset de entrenamiento
-├── modelo_triaje_esi.h5          # Modelo entrenado (generado)
-└── README.md                     # Este archivo
-👩‍💻 Autor
-Karen Castellanos
-Proyecto académico — Inteligencia Artificial aplicada a la salud
+├── triaje_RNA.py                    # Código principal + GUI
+├── feedmml_ed_triage_dataset.csv    # Dataset de entrenamiento
+├── modelo_triaje_esi.h5             # Modelo entrenado (generado)
+└── README.md                        # Este archivo
+```
+
+---
+
+## 👩‍💻 Autor
+
+**Litzy Castellanos**
+
+Proyecto académico — *Inteligencia Artificial aplicada a la salud*
